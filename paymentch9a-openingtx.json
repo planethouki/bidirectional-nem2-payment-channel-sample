@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "height": [
+      139355,
+      0
+    ],
+    "hash": "2CC60B778542BCB58579EA49EA3D5324DC3E7F375694E202D1B6F431628F3907",
+    "merkleComponentHash": "4266963D2A51D8FA4E8407DB43D358F160E007C42AD818AFFCC5FBB7284C3BA5",
+    "index": 0,
+    "id": "5C26F85704C6E10001670971"
+  },
+  "transaction": {
+    "signature": "20144441F1EEA40CDD30616CCFDAD1069649BAD45E466F1E81DCDAF0289CBB741374B133C56067906712BBC24B1D518B2010AAA527B681EE26D7B735D279FE01",
+    "signer": "C5E6763641CB861D9D24546566F1D370D2F3128AF51DFFBE96BC612892971AFA",
+    "version": 36866,
+    "type": 16961,
+    "fee": [
+      0,
+      0
+    ],
+    "deadline": [
+      696737220,
+      20
+    ],
+    "cosignatures": [
+      {
+        "signer": "9C8BD285302FA5E353E6B8084D378614D206B3DC050E23ABFE152010CDF5F1D6",
+        "signature": "70F1C94A6598CFE09D49B3A725E64ACB900E16DB428B4365127EC789EA128DFADCAFA199865EC8125187938D36AAC5E248D98C5381F5FF56729587C295351A07"
+      }
+    ],
+    "transactions": [
+      {
+        "meta": {
+          "height": [
+            139355,
+            0
+          ],
+          "aggregateHash": "2CC60B778542BCB58579EA49EA3D5324DC3E7F375694E202D1B6F431628F3907",
+          "aggregateId": "5C26F85704C6E10001670971",
+          "index": 0,
+          "id": "5C26F85704C6E10001670972"
+        },
+        "transaction": {
+          "signer": "C5E6763641CB861D9D24546566F1D370D2F3128AF51DFFBE96BC612892971AFA",
+          "version": 36867,
+          "type": 16724,
+          "recipient": "90552E1D65F57587511E3889A522B3F70A703DA90A0605C150",
+          "message": {
+            "type": 0,
+            "payload": "6F70656E696E67207478203558454D"
+          },
+          "mosaics": [
+            {
+              "id": [
+                3646934825,
+                3576016193
+              ],
+              "amount": [
+                5000000,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "meta": {
+          "height": [
+            139355,
+            0
+          ],
+          "aggregateHash": "2CC60B778542BCB58579EA49EA3D5324DC3E7F375694E202D1B6F431628F3907",
+          "aggregateId": "5C26F85704C6E10001670971",
+          "index": 1,
+          "id": "5C26F85704C6E10001670973"
+        },
+        "transaction": {
+          "signer": "9C8BD285302FA5E353E6B8084D378614D206B3DC050E23ABFE152010CDF5F1D6",
+          "version": 36867,
+          "type": 16724,
+          "recipient": "90552E1D65F57587511E3889A522B3F70A703DA90A0605C150",
+          "message": {
+            "type": 0,
+            "payload": "6F70656E696E67207478203558454D"
+          },
+          "mosaics": [
+            {
+              "id": [
+                3646934825,
+                3576016193
+              ],
+              "amount": [
+                5000000,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
