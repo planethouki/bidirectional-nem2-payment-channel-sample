@@ -1,0 +1,23 @@
+{
+  "name": "bidirectional-nem2-payment-channel-sample",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planethouki/bidirectional-nem2-payment-channel-sample.git"
+  },
+  "author": "planethouki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/planethouki/bidirectional-nem2-payment-channel-sample/issues"
+  },
+  "homepage": "https://github.com/planethouki/bidirectional-nem2-payment-channel-sample#readme",
+  "dependencies": {
+    "nem2-library": "^0.9.5",
+    "nem2-sdk": "^0.10.1",
+    "rxjs": "^6.3.3"
+  }
+}
