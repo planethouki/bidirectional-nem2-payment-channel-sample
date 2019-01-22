@@ -84,15 +84,35 @@ The flowcharts below show the major steps at a different level of abstraction.
 	                       └─────repeat until n─────┘                                         
 	                                                                                          
 	                                                                                                                                                                                
-	                                                                                                       ---                                                            
+	                                                                                                       --- 
+	                                                                                                                                                                  
 # Open Channel	          
-<img src="./src/img/open_channel.png" width="640">                                                                                             
+<img src="./src/img/open_channel.png" width="840">                                                                                             
 
-# Update
-<img src="./src/img/update_channel.png" width="640">     
+# Update Channel
+<img src="./src/img/update_channel.png" width="840">     
 
-# Channel
-##WIP	                             
+# Close Channel
+
+ 	                                  ┌──────────────────────────────────┐      ┌───────────────────┐                                                                   
+	                                  │      either of the parties       │      │                   │                                                                   
+	               ┌──────────┐       │          creates final           │      │ other party signs │                                                                   
+	     ┌────────▶│bilateral │──────▶│      Aggregate Complete Tx       │─────▶│ and announces to  │───────┐                                                           
+	     │         └──────────┘       │with the newest balance (state n) │      │    blockchain     │       │       ┌───────────────────┐                               
+	     │                            └──────────────────────────────────┘      │                   │       │       │     close out     │                               
+	     │                                                                      └───────────────────┘       │       │according to agreed│                               
+	     │                            ┌──────────────────────────────────┐      ┌───────────────────┐       ├──────▶│  off-chain state  │───────────────┐               
+	┌─────────┐                       │ one party is not responsive and  │      │balance of         │       │       │                   │               │    ┌─────────┐
+	│█████████│    ┌──────────┐       │ the remaining one announces most │      │announcing party is│       │       └───────────────────┘               │    │█████████│
+	│██Start██│───▶│unilateral│──────▶│ recent Commitment Tx ACn or BCn  │─────▶│locked up until    │───────┘                                           ├───▶│███End███│
+	│█████████│    └──────────┘       │                                  │      │LockFundsTx expires│                                                   │    │█████████│
+	└─────────┘                       └──────────────────────────────────┘      └───────────────────┘                                                   │    └─────────┘
+	     │                            ┌──────────────────────────────────┐      ┌───────────────────┐    ┌──────────────────┐   ┌──────────────────┐    │               
+	     │                            │                                  │      │balance of         │    │ victim announces │   │  cheater loses   │    │               
+	     │         ┌──────────┐       │  cheating party announces state  │      │announcing party is│    │SecretProofTx with│   │deposit, the other│    │               
+	     └────────▶│ cheating │──────▶│   that is NOT the most recent    │─────▶│locked up until    │───▶│    Proof from    │──▶│party receives all│────┘               
+	               └──────────┘       │                                  │      │LockFundsTx expires│    │previous round(s) │   │      funds       │                    
+	                                  └──────────────────────────────────┘      └───────────────────┘    └──────────────────┘   └──────────────────┘                                                
 	                                                                                                              
 	                                                                                                                                                                                           
 ---
