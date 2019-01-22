@@ -34,6 +34,7 @@ NEM2カタパルトで双方向ペイメントチャネルするには その３
 https://qiita.com/planethouki/items/945239fe04d2af1fb203
 
 ---
+#Bidirectional Payments between Two Parties
 This document describes a Lightning Network implementation for NEM2 (codename Catapult). This approach does not introduce new transaction types, but manages to use readily available features. A combination of Multi-Signature, Aggregate Complete and Secret Lock Transactions, the latter is the NEM counterpart of Hashed Timelock Contracts (HTLC). Following the protocol laid out in this repository, one can execute scaleable off-chain transactions with NEM already today!   
 
 > Simplicity is the ultimate sophistication.
