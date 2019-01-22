@@ -85,13 +85,13 @@ The flowcharts below show the major steps at a different level of abstraction.
 	                       └─────repeat until n─────┘                                         
 	                                                                                          
 	                                                                                                                                                                                
-	                                                                                                       --- 
+
 	                                                                                                                                                                  
 # Open Channel	          
 <img src="./src/img/open_channel.png" width="840">                                                                                             
 
 # Update Channel
-<img src="./src/img/update_channel.png" width="840">     
+<img src="./src/img/update_channel.png" width="640">     
 
 # Close Channel
 
