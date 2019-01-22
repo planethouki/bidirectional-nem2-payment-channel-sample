@@ -72,26 +72,34 @@ The flowcharts below show the major steps at a different level of abstraction.
 	                                                                                          
 	                                                                                          
 	┌──────────────────┐      ┌──────────────────┐     ┌─────────────────────────────────────┐
-	│                  │      │                  │     │ Aggregate Complete (mutual intent)  │
-	│ Collateral Tx A1 │      │                  │     │                                     │
-	│ Collateral Tx B1 │      │ Collateral Tx An │     │ Collateral An or Bn (disagreement)  │
-	│    Funding Tx    │─────▶│ Collateral Tx Bn │──┬─▶│                                     │
-	│                  │   ▲  │                  │  │  │Collateral & SecretProofTx (cheating)│
+	│                  │      │                  │     │   Aggregate Complete (bilateral)    │
+	│ Commitment Tx A1 │      │                  │     │                                     │
+	│ Commitment Tx B1 │      │ Commitment Tx An │     │  Commitment An or Bn (unilateral)   │
+	│    Funding Tx    │─────▶│ Commitment Tx Bn │──┬─▶│                                     │
+	│                  │   ▲  │                  │  │  │Commitment & SecretProofTx (cheating)│
 	│                  │   │  │                  │  │  │                                     │
 	└──────────────────┘   │  └──────────────────┘  │  └─────────────────────────────────────┘
 	                       │                        │                                         
 	                       │                        │                                         
 	                       └─────repeat until n─────┘                                         
 	                                                                                          
-	                                                                                                                                                
+	                                                                                                                                                                                
+	                                                                                                       ---                                                            
+# Open Channel	          
+<img src="./src/img/open_channel.png" width="640">                                                                                             
+
+# Update
+<img src="./src/img/update_channel.png" width="640">     
+
+# Channel
+##WIP	                             
+	                                                                                                              
+	                                                                                                                                                                                           
 ---
 
 
 
-
-
-
-	         Funding Transaction                         Collateral Transaction AC1                  Collateral Transaction BC1     
+	         Funding Transaction                         Commitment Transaction AC1                  Commitment Transaction BC1     
 	                                                                                                                                
 	┌────────┐                ┌────────┐           ┌────────┐                  ┌────────┐     ┌────────┐                  ┌────────┐
 	│        │                │        │           │        ├─ ── ── ── ── ── ─┤        │     │        ├─ ── ── ── ── ── ─┤        │
