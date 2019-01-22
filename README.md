@@ -41,7 +41,50 @@ This document describes a Lightning Network implementation for NEM2 (codename Ca
 
 A Lightning Network is a second layer protocol that allows users to send an (almost) unlimited number of transactions between parties without involving the blockchain, except at opening and closing the respective channel. Among other aspects, most importantly the protocol is designed in such a way that no funds can be stolen by cheating parties.
 
-The flowchart below shows the major steps.
+The flowcharts below show the major steps at a different level of abstraction.
+
+	┌──────────────────┐      ┌──────────────────┐     ┌──────────────────┐                   
+	│                  │      │                  │     │                  │                   
+	│                  │      │                  │     │                  │                   
+	│   Open Channel   │      │Perform Lightning │     │  Close Channel   │                   
+	│                  │─────▶│     Payments     │──┬─▶│                  │                   
+	│                  │  ▲   │                  │  │  │                  │                   
+	│                  │  │   │                  │  │  │                  │                   
+	└──────────────────┘  │   └──────────────────┘  │  └──────────────────┘                   
+	                      │                         │                                         
+	                      │                         │                                         
+	                      └───repeat instant tx at ─┘                                         
+	                             almost no cost                                               
+	                                                                                          
+	                                                                                          
+	┌──────────────────┐      ┌──────────────────┐     ┌──────────────────┐                   
+	│                  │      │   Update state   │     │                  │                   
+	│                  │      │    off-chain     │     │                  │                   
+	│    Lock state    │      │                  │     │    Close out     │                   
+	│     on-chain     │─────▶│ using a message  │──┬─▶│     on-chain     │                   
+	│                  │  ▲   │  transportation  │  │  │                  │                   
+	│                  │  │   │      layer       │  │  │                  │                   
+	└──────────────────┘  │   └──────────────────┘  │  └──────────────────┘                   
+	                      │                         │                                         
+	                      │                         │                                         
+	                      └───repeat instant tx at ─┘                                         
+	                             almost no cost                                               
+	                                                                                          
+	                                                                                          
+	┌──────────────────┐      ┌──────────────────┐     ┌─────────────────────────────────────┐
+	│                  │      │                  │     │ Aggregate Complete (mutual intent)  │
+	│ Collateral Tx A1 │      │                  │     │                                     │
+	│ Collateral Tx B1 │      │ Collateral Tx An │     │ Collateral An or Bn (disagreement)  │
+	│    Funding Tx    │─────▶│ Collateral Tx Bn │──┬─▶│                                     │
+	│                  │   ▲  │                  │  │  │Collateral & SecretProofTx (cheating)│
+	│                  │   │  │                  │  │  │                                     │
+	└──────────────────┘   │  └──────────────────┘  │  └─────────────────────────────────────┘
+	                       │                        │                                         
+	                       │                        │                                         
+	                       └─────repeat until n─────┘                                         
+	                                                                                          
+	                                                                                                                                                
+---
 
 
 
